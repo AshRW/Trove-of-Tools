@@ -1,7 +1,27 @@
 .navbar {
-  background-color: #444444; /* Highlighted color for navbar */
+  background-color: #161616;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 15px 50px;
+  height: 5vh;
+}
+
+.question-mark {
+  font-size: 40px;
+  font-weight: 700;
+  transition: all 0.2s ease-in-out;
+}
+
+.question-mark:hover {
+  /* transform: scale(5); */
+  transform: rotate(-30deg) scale(3);
+}
+.logo {
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.logo:hover {
+  transform: scale(1.15);
 }

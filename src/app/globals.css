@@ -1,6 +1,6 @@
 /* Global styles */
 body {
-  background-color: #333333; /* Darker shade of gray for the background */
+  background-color: #093640; /* Darker shade of gray for the background */
   color: #ffffff; /* White text for better contrast */
   font-family: "Arial", sans-serif; /* Adjust font family as needed */
   margin: 0;
@@ -24,5 +24,91 @@ body {
 }
 
 div {
-  border:1px solid black;
+  border: 1px solid black;
+}
+
+.tool-container {
+  padding: 5px;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  grid-auto-rows: 380px;
+}
+
+.tool-card {
+  margin: 40px;
+  background-color: #161616;
+  /* margin: 5px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* box-shadow: rgba(255, 255, 255, 0.15) 1.95px 1.95px 2.6px; */
+  border: solid #0a3e72 4px;
+  border-radius: 0.3cm;
+  transition: transform 0.1s ease-in-out;
+}
+
+.tool-card:hover {
+  border: solid #1f74c9 4px;
+  transform: scale(1.02);
+}
+
+.rainbow-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  font-size: 25px;
+  font-weight: 900;
+  background: white;
+  background-clip: text;
+  color: transparent;
+  transition: background-position 1s ease-in-out;
+}
+
+.rainbow-text:hover {
+  background: linear-gradient(
+    to right,
+    rgb(163, 255, 4),
+    rgb(55, 55, 255),
+    rgb(255, 0, 81)
+  );
+
+  /* background: linear-gradient(
+    to right,
+    violet,
+    indigo,
+    blue,
+    green,
+    yellow,
+    orange,
+    red
+  ); */
+  background-clip: text;
+  color: transparent;
+  background-size: 200% auto;
+  background-position: 100% 0;
+}
+
+.gray-hue-text:hover {
+  background: linear-gradient(
+    to right,
+    rgb(41, 41, 41),
+    rgb(132, 132, 132),
+    rgb(60, 60, 60),
+    rgb(132, 132, 132)
+  );
+  background-clip: text;
+  color: transparent;
+  background-size: 200% auto;
+  background-position: 100% 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .tool-container {
+    grid-template-columns: none;
+    grid-template-columns: repeat(auto-fill, 1fr);
+    grid-auto-rows: 180px;
+  }
 }

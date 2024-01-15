@@ -28,7 +28,30 @@ export default function Home() {
       },
     ],
     [4, { id: 4, name: "MailMan Client", link: `${TOOLS_BASE_PATH}/mailman` }],
-    [5, { id: 5, name: "TOOL5", link: `${TOOLS_BASE_PATH}/json-to-csv` }],
+    [
+      5,
+      {
+        id: 5,
+        name: "<UnderConstruction>",
+        link: `/underconstruction`,
+      },
+    ],
+    [
+      6,
+      {
+        id: 6,
+        name: "<UnderConstruction>",
+        link: `/underconstruction`,
+      },
+    ],
+    [
+      7,
+      {
+        id: 7,
+        name: "<UnderConstruction>",
+        link: `/underconstruction`,
+      },
+    ],
   ]);
 
   function goToToolPage(id: number) {
@@ -36,11 +59,13 @@ export default function Home() {
   }
 
   return (
-    <div>
+    <div className="tool-container">
       {[...toolsMap.values()].map(({ id, name }) => {
         return (
-          <div onClick={() => goToToolPage(id)} key={id}>
-            {name}
+          <div className="tool-card" onClick={() => goToToolPage(id)} key={id}>
+            <div className={"rainbow-text " + (id > 4 ? "gray-hue-text" : "")}>
+              {name}
+            </div>
           </div>
         );
       })}

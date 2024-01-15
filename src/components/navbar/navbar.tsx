@@ -1,6 +1,7 @@
 "use client";
 import "./navbar.css";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function NavBar() {
   const router = useRouter();
@@ -15,8 +16,17 @@ export default function NavBar() {
 
   return (
     <nav className="navbar">
-      <div onClick={handleLogoOnClick}>LOGO</div>
-      <div onClick={handleAboutOnClick}>ABOUT</div>
+      <Image
+        className="logo"
+        src="/box.png"
+        alt="ToolBox Logo"
+        width={80}
+        height={50}
+        onClick={handleLogoOnClick}
+      />
+      <div className="question-mark" onClick={handleAboutOnClick}>
+        ?
+      </div>
     </nav>
   );
 }

@@ -1,3 +1,3 @@
 export default function Test1() {
-    return <p>Test1</p>
+    return <p>Tools</p>
 }
