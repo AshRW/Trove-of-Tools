@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import "./guitar-tuner.css";
 
 export default function Tuner() {
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -43,19 +44,27 @@ export default function Tuner() {
   }
 
   return (
-    <div>
-      <p>TUNER</p>
-      <div>
-        {[...stringsMap.values()].map(({ id, name }) => (
-          <button key={id} onClick={() => handleStringClick(id)}>
-            {name}
+    <div className="tool-container">
+      <div className="tool-title">GUITAR TUNER</div>
+      <div className="tool-main">
+        <div className="strings">
+          {[...stringsMap.values()].map(({ id, name }) => (
+            <button
+              className="button"
+              key={id}
+              onClick={() => handleStringClick(id)}
+            >
+              {name}
+            </button>
+          ))}
+        </div>
+        <div className={"config " + `${isRepeat && "repeat-on "}`}>
+          <button className="button" onClick={handleRepeatButtonClick}>
+            {isRepeat ? "Don't Repeat" : "Repeat Note"}
           </button>
-        ))}
-        <button onClick={handleRepeatButtonClick}>
-          {isRepeat ? "Don't Repeat" : "Repeat Note"}
-        </button>
+        </div>
       </div>
-      <div>
+      <div className="audio-div">
         <audio ref={audioRef} src="/guitar_tuner_all_strings.mp3" />
       </div>
     </div>

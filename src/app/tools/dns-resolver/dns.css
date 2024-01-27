@@ -1,0 +1,19 @@
+form {
+  display: flex;
+  justify-content: center;
+}
+
+.tool {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.output {
+  padding: 10px;
+  margin: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+}

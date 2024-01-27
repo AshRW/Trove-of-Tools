@@ -1,0 +1,46 @@
+/* .tool-container {
+  display: grid;
+  gap: 1rem;
+}
+
+.tool-title {
+  font-size: 25px;
+  font-weight: 900;
+  text-align: center;
+  padding: 20px 10px;
+} */
+
+.csv-to-json {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  height: 80vh;
+  div {
+    padding: 10px;
+  }
+  textarea {
+    width: 100%;
+    padding: 5px;
+    resize: none;
+    border: none;
+    border-radius: 3px;
+    height: 500px;
+    color: rgb(39, 158, 2);
+    background-color: black;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .csv-to-json {
+    grid-template-columns: none;
+    grid-template-columns: 1fr;
+    /* grid-auto-rows: 180px; */
+    gap: 0.5rem;
+    div {
+      padding: 5px;
+    }
+    textarea {
+      height: 200px;
+    }
+  }
+}

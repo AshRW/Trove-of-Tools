@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 50px;
-  height: 5vh;
+  height: 8vh;
 }
 
 .question-mark {
@@ -14,7 +14,6 @@
 }
 
 .question-mark:hover {
-  /* transform: scale(5); */
   transform: rotate(-30deg) scale(3);
 }
 .logo {
@@ -24,4 +23,11 @@
 
 .logo:hover {
   transform: scale(1.15);
+}
+
+
+@media only screen and (max-width: 600px) {
+  .navbar{
+    padding: 15px 10px;
+  }
 }

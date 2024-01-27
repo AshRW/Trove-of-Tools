@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import "./csv-to-json.css";
 
 export default function JsonToCsv() {
   const [output, setOutput] = useState<string>("Output will appear here");
@@ -52,20 +53,34 @@ export default function JsonToCsv() {
   }
 
   return (
-    <div>
-      <p>CSVtoJSON</p>
-      <form onSubmit={(e) => handleInputFormSubmit(e.nativeEvent)}>
-        <label>
-          CSV:
-          <textarea name="input" id="input" cols={30} rows={10}></textarea>
-        </label>
-
-        <button type="submit">Convert</button>
-      </form>
-      <label>
-        JSON: <input value={output} readOnly={true} />
-      </label>
-      <button onClick={copyOutputToClipboard}>Copy JSON</button>
+    <div className="tool-container">
+      <div className="tool-title">CSV to JSON</div>
+      <div className="csv-to-json">
+        <div className="input-div">
+          <div>CSV:</div>
+          <div className="form-container">
+            <form onSubmit={(e) => handleInputFormSubmit(e.nativeEvent)}>
+              <textarea name="input" id="input" spellCheck={false} placeholder="Enter Here"></textarea>
+              <button className="button" type="submit">
+                Convert
+              </button>
+            </form>
+          </div>
+        </div>
+        <div className="output-div">
+          <div>JSON: </div>
+          <div>
+            <textarea
+              value={output}
+              readOnly={true}
+              spellCheck={false}
+            ></textarea>
+            <button className="button" onClick={copyOutputToClipboard}>
+              Copy
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

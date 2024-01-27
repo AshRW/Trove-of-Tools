@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { LoremIpsum } from "lorem-ipsum";
+import "./lorem.css";
 
 export default function LoremIpsumGenerator() {
   const [output, setOutput] = useState<string>("Lorem");
@@ -43,34 +44,43 @@ export default function LoremIpsumGenerator() {
   }
 
   return (
-    <div>
-      <p>Lorem ipsum generator</p>
-      <div>
+    <div className="tool-container">
+      <div className="tool-title">Lorem ipsum generator</div>
+      <div className="tool">
+        {/* <div className="form"> */}
         <form onSubmit={(e) => handleInputFormSubmit(e.nativeEvent)}>
-          <label>
-            Words Per Sentence:
+          <div className="form-item">
+            <div>Words Per Sentence:</div>
             <input type="text" name="words" id="words" defaultValue={16} />
-          </label>
-          <label>
-            Sentences Per Paragraph:
+          </div>
+          <div className="form-item">
+            <div>Sentences Per Paragraph:</div>
             <input type="text" name="sentence" id="sentence" defaultValue={8} />
-          </label>
-          <label>
-            No of Paragraphs:
+          </div>
+          <div className="form-item">
+            <div>No of Paragraphs:</div>
             <input type="text" name="para" id="para" defaultValue={7} />
-          </label>
-
-          <button type="submit">Generate</button>
+          </div>
+          <div className="form-item">
+            <button className="button" type="submit">
+              Generate
+            </button>
+          </div>
         </form>
-        <button onClick={copyOutputToClipboard}>Copy Text</button>
-        <textarea
-          name="output"
-          id="output"
-          value={output}
-          cols={30}
-          rows={10}
-          readOnly={true}
-        ></textarea>
+        {/* </div> */}
+        <div className="output">
+          <textarea
+            name="output"
+            id="output"
+            value={output}
+            cols={30}
+            rows={10}
+            readOnly={true}
+          ></textarea>
+          <button className="button" onClick={copyOutputToClipboard}>
+            Copy to Clipboard
+          </button>
+        </div>
       </div>
     </div>
   );
